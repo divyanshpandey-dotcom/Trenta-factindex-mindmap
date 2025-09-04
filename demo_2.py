@@ -470,7 +470,7 @@ def show_facts_overview_popup():
         )
     
     # Main content tabs
-    tab1, tab2, tab3, tab4 = st.tabs(["📋 All Facts", "🚨 Inconsistencies", "✅ Consistent Facts", "📊 Analytics"])
+    tab1, tab2, tab3 = st.tabs(["📋 All Facts", "🚨 Inconsistencies", "✅ Consistent Facts"])
     
     with tab1:
         st.header("📋 All Objective Facts Overview")
@@ -597,52 +597,6 @@ def show_facts_overview_popup():
                 
                 with col2:
                     st.markdown("✅ **Consistent**")
-    
-    with tab4:
-        st.header("📊 Policy Consistency Analytics")
-        
-        # Consistency overview chart
-        consistency_data = {
-            'Status': ['Consistent', 'Inconsistent'],
-            'Count': [len(consistent_facts), len(inconsistent_facts)],
-            'Color': ['#4CAF50', '#F44336']
-        }
-        
-        fig_pie = px.pie(
-            values=consistency_data['Count'], 
-            names=consistency_data['Status'],
-            title="Overall Policy Consistency Distribution",
-            color_discrete_map={'Consistent': '#4CAF50', 'Inconsistent': '#F44336'}
-        )
-        st.plotly_chart(fig_pie, use_container_width=True)
-        
-        # Document-wise analysis
-        if inconsistent_facts:
-            st.subheader("📄 Documents Contributing to Inconsistencies")
-            
-            doc_inconsistencies = {}
-            for field_name, facts in inconsistent_facts.items():
-                for fact in facts:
-                    doc_name = fact['document_title']
-                    if doc_name not in doc_inconsistencies:
-                        doc_inconsistencies[doc_name] = 0
-                    doc_inconsistencies[doc_name] += 1
-            
-            doc_df = pd.DataFrame([
-                {'Document': doc, 'Inconsistent Fields': count}
-                for doc, count in doc_inconsistencies.items()
-            ])
-            
-            fig_bar = px.bar(
-                doc_df, 
-                x='Document', 
-                y='Inconsistent Fields',
-                title="Inconsistent Fields by Document",
-                color='Inconsistent Fields',
-                color_continuous_scale='Reds'
-            )
-            fig_bar.update_xaxes(tickangle=45)
-            st.plotly_chart(fig_bar, use_container_width=True)
 
     # Close button for popup
     if st.button("✖️ Close Facts Overview", type="primary", use_container_width=True):
@@ -671,7 +625,7 @@ def create_demo_landing_page():
     with stat_col2:
         st.metric("Key Insights", "23")
     with stat_col3:
-        st.metric("Policy Consistency", "91.1%")
+        st.metric("Policy Consistency", "85%")
     
     st.divider()
     
