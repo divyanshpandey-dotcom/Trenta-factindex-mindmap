@@ -671,7 +671,7 @@ def create_demo_landing_page():
     with stat_col2:
         st.metric("Key Insights", "23")
     with stat_col3:
-        st.metric("Policy Consistency", "85%")
+        st.metric("Policy Consistency", "91.1%")
     
     st.divider()
     
