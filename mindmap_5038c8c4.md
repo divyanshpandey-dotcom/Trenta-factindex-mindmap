@@ -1,4 +1,4 @@
-# 🔍 Integrated Controls and Assurance Framework Overview <!-- markmap: foldAll -->
+# 🔍 Integrated Controls and Assurance Framework Overview
 ## 📋 Information Security Policy <!-- markmap: foldAll -->
 ### 🎯 Role-Based Access and Authentication Controls <!-- markmap: foldAll -->
 #### 🔸 Quarterly Access Reviews <!-- markmap: foldAll -->
