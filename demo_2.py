@@ -590,7 +590,7 @@ def show_facts_overview_popup():
                     <div class="consistent-metric">
                         <h4>{field_name.replace('_', ' ').title()}</h4>
                         <p><strong>Value:</strong> {fact['value']}</p>
-                        <p><strong>Source:</strong> "{fact.get('source_sentence', 'N/A')[:100]}{'...' if len(fact.get('source_sentence', '')) > 100 else ''}"</p>
+                        <p><strong>Source Sentence:</strong> "{fact.get('source_sentence', 'N/A')[:100]}{'...' if len(fact.get('source_sentence', '')) > 100 else ''}"</p>
                         <span class="doc-badge">{fact['document_title']}</span>
                     </div>
                     """, unsafe_allow_html=True)
