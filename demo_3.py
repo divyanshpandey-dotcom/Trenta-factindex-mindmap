@@ -2164,7 +2164,7 @@ def create_demo_landing_page():
             st.success("""
             **📊 Sample Insights in Demo:**
             • 4 interconnected policy documents  
-            • 23 key audit findings mapped  
+            • 15 key audit findings mapped  
             • 3 levels of detail (expandable view)  
             • Cross-reference analysis included
             """)
@@ -2196,7 +2196,7 @@ def create_demo_landing_page():
             with metric_col1:
                 st.metric("Documents", "4", delta=None)
             with metric_col2:
-                st.metric("Insights", "23", delta=None)
+                st.metric("Insights", "15", delta=None)
     
     with col2:
         # Policy Inconsistency Analyzer Section
